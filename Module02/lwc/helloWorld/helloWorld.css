@@ -1,0 +1,19 @@
+.red_font {
+
+    color: red;
+
+}
+.blue_font {
+
+    color: rgb(0, 201, 236);
+
+}
+.green_font {
+
+    color: green;
+
+} 
+ul:not(.browser-default){
+
+    list-style-type:  disc;
+}
