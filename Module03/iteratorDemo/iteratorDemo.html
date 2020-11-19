@@ -1,0 +1,54 @@
+<template>
+    <lightning-card title="For:Each Demo" icon-name="standard:contact">
+        <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+            <thead>
+              <tr class="slds-line-height_reset">
+                <th class="" scope="col">
+                  <div class="slds-truncate" title="Index">Index</div>
+                </th>
+                <th class="" scope="col">
+                  <div class="slds-truncate" title="Id">Id</div>
+                </th>
+                <th class="" scope="col">
+                  <div class="slds-truncate" title="Name">Name</div>
+                </th>
+                <th class="" scope="col">
+                    <div class="slds-truncate" title="Email">Email</div>
+                  </th>
+                </tr>
+            </thead>
+            <tbody>
+            <template if:true={contacts.length} for:each={contacts} for:item="con" for:index="index">
+                <tr class="slds-hint-parent" key={con.Id}>
+                    <th data-label="Index" scope="row">
+                        <div class="slds-truncate">{index}</div>
+                      </th>
+                    <td data-label="Id">
+                        <div class="slds-truncate">{con.Id}</div>
+                    </td>
+                    <td data-label="Name">
+                        <div class="slds-truncate">{con.Name}</div>
+                    </td>
+                    <td data-label="Email">
+                        <div class="slds-truncate">{con.Email}</div>
+                    </td>
+                </tr>
+            </template>
+            </tbody>
+        </table>
+    </lightning-card>
+    <div class="slds-m-top_medium slds-size_12-of-12"></div>
+    <lightning-card title="Iterator Demo" icon-name="standard:contact">
+        <ul class="slds-m-around_medium">
+            <template iterator:it={contacts}>
+                <li key={it.value.Id}>
+                    <div if:true={it.first} class="list-first"></div>
+                    <div class="slds-m-top_small slds-m-bottom_small">
+                    {it.value.Name} - {it.value.Email}
+                    </div>
+                    <div if:true={it.last} class="list-last"></div>
+                </li>
+            </template>
+        </ul>
+    </lightning-card>
+</template>

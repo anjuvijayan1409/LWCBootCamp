@@ -1,0 +1,29 @@
+<template>
+    <lightning-card>
+        <div class="slds-m-around_small">
+            <lightning-layout horizontal-align="center">
+                <lightning-layout-item>
+                        <template if:true={isTom}>
+                            <div class="slds-m-around_small">
+                                <img src={tomImage}></img>
+                            </div>
+                        </template>
+                        <template if:false={isTom}>
+                            <div class="slds-m-around_small">
+                                <img src={jerryImage}></img>
+                            </div>
+                        </template>
+                </lightning-layout-item>
+                <lightning-layout-item>
+                    <div class="slds-m-around_small height_full">
+                        <lightning-layout vertical-align="center" class="height_full">
+                            <lightning-layout-item>
+                                <lightning-button variant="brand" label={buttonLabel} title={buttonLabel} onclick={toggleImage}> </lightning-button>
+                            </lightning-layout-item>
+                        </lightning-layout>
+                    </div>
+                </lightning-layout-item>
+            </lightning-layout>
+        </div>
+    </lightning-card>  
+</template>

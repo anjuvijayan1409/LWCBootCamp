@@ -1,0 +1,8 @@
+.list-first {
+    border-top: 2px solid rgb(80, 79, 79);
+}
+
+.list-last {
+    border-bottom: 2px solid rgb(80, 79, 79);
+
+}
