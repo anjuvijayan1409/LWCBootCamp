@@ -1,0 +1,59 @@
+<template>
+    <div class ="slds-size_10-of-12 slds-align_absolute-center">
+        <lightning-card title="Full Calculator" icon-name="custom:custom34">
+        <c-calc-demo-child passed-value={calcExpression} passed-label="Calc Expression"></c-calc-demo-child>
+        <c-calc-demo-child passed-value={calcResult} passed-label="Result" passed-invalid={isInvalid}></c-calc-demo-child>
+        <lightning-layout horizontal-align="center" multiple-rows>
+               <lightning-layout-item size="3" padding="around-small"  class="slds-border_top slds-border_bottom">
+                    <lightning-button variant="brand-outline" label="1" title="1" onclick={handleClick} class="slds-m-left_x-small"></lightning-button>
+                </lightning-layout-item>
+                <lightning-layout-item size="3" padding="around-small"  class="slds-border_top slds-border_bottom">
+                    <lightning-button variant="brand-outline" label="2" title="2" onclick={handleClick} class="slds-m-left_x-small"></lightning-button>
+                </lightning-layout-item>
+                <lightning-layout-item size="3" padding="around-small"  class="slds-border_top slds-border_bottom">
+                    <lightning-button variant="brand-outline" label="3" title="3" onclick={handleClick} class="slds-m-left_x-small"></lightning-button>
+                </lightning-layout-item>
+                <lightning-layout-item size="3" padding="around-small"  class="slds-border_top slds-border_bottom">
+                    <lightning-button variant="brand" label="+" title="+" onclick={handleClick} class="slds-m-left_x-small"></lightning-button>
+                </lightning-layout-item>
+                <lightning-layout-item size="3" padding="around-small"  class="slds-border_top slds-border_bottom">
+                    <lightning-button variant="brand-outline" label="4" title="4" onclick={handleClick} class="slds-m-left_x-small"></lightning-button>
+                </lightning-layout-item>
+                <lightning-layout-item size="3" padding="around-small"  class="slds-border_top slds-border_bottom">
+                    <lightning-button variant="brand-outline" label="5" title="5" onclick={handleClick} class="slds-m-left_x-small"></lightning-button>
+                </lightning-layout-item>
+                <lightning-layout-item size="3" padding="around-small"  class="slds-border_top slds-border_bottom">
+                    <lightning-button variant="brand-outline" label="6" title="6" onclick={handleClick} class="slds-m-left_x-small"></lightning-button>
+                </lightning-layout-item>
+                <lightning-layout-item size="3" padding="around-small"  class="slds-border_top slds-border_bottom">
+                    <lightning-button variant="brand" label="-" title="-" onclick={handleClick} class="slds-m-left_x-small"></lightning-button>
+                </lightning-layout-item>
+                <lightning-layout-item size="3" padding="around-small"  class="slds-border_top slds-border_bottom">
+                    <lightning-button variant="brand-outline" label="7" title="7" onclick={handleClick} class="slds-m-left_x-small"></lightning-button>
+                </lightning-layout-item>
+                <lightning-layout-item size="3" padding="around-small"  class="slds-border_top slds-border_bottom">
+                    <lightning-button variant="brand-outline" label="8" title="8" onclick={handleClick} class="slds-m-left_x-small"></lightning-button>
+                </lightning-layout-item>
+                <lightning-layout-item size="3" padding="around-small"  class="slds-border_top slds-border_bottom">
+                    <lightning-button variant="brand-outline" label="9" title="9" onclick={handleClick} class="slds-m-left_x-small"></lightning-button>
+                </lightning-layout-item>
+                <lightning-layout-item size="3" padding="around-small"  class="slds-border_top slds-border_bottom">
+                    <lightning-button variant="brand" label="*" title="*" onclick={handleClick} class="slds-m-left_x-small"></lightning-button>
+                </lightning-layout-item>
+                <lightning-layout-item size="3" padding="around-small"  class="slds-border_top slds-border_bottom">
+                    <lightning-button variant="destructive-text" label="CLR" title="CLR" onclick={clearValues} class="slds-m-left_x-small"></lightning-button>
+                </lightning-layout-item>
+                <lightning-layout-item size="3" padding="around-small"  class="slds-border_top slds-border_bottom">
+                    <lightning-button variant="brand-outline" label="0" title="0" onclick={handleClick} class="slds-m-left_x-small"></lightning-button>
+                </lightning-layout-item>
+                <lightning-layout-item size="3" padding="around-small"  class="slds-border_top slds-border_bottom">
+                    <lightning-button variant="success" label="=" title="=" onclick={handleClick} class="slds-m-left_x-small"></lightning-button>
+                </lightning-layout-item>
+                <lightning-layout-item size="3" padding="around-small"  class="slds-border_top slds-border_bottom">
+                    <lightning-button variant="brand" label="/" title="/" onclick={handleClick} class="slds-m-left_x-small"></lightning-button>
+                </lightning-layout-item>
+              
+        </lightning-layout>
+   </lightning-card>
+</div>
+</template>

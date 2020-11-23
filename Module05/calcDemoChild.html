@@ -1,0 +1,5 @@
+<template>
+    <p>{passedLabel}</p>
+    <p if:true={passedInvalid}>Invalid Expression</p>
+    <p if:false={passedInvalid}>{passedValue}</p>
+</template>
