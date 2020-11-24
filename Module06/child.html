@@ -1,0 +1,10 @@
+<template>
+    <lightning-card title={childNumber} icon-name="standard:user" class="slds-border"> 
+        <div if:true={selected} class="slds-align_absolute-center">               
+            <lightning-button variant="destructive" label="Deselect" title="Deselect" onclick={handleChildClick} class="slds-m-left_x-small"></lightning-button>                   
+        </div>
+        <div if:false={selected} class="slds-align_absolute-center">
+            <lightning-button variant="success" label="Select" title="Select" onclick={handleChildClick} class="slds-m-left_x-small"></lightning-button>
+        </div>
+    </lightning-card>
+</template>

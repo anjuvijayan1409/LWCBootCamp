@@ -1,0 +1,24 @@
+<template>
+    <lightning-card title="Parent" icon-name="standard:person_account"  class="slds-border">
+        <lightning-layout horizontal-align="center" multiple-rows>
+            <lightning-layout-item size="4">
+                {childOneStatus}
+                <div class="slds-box slds-align_absolute-center  slds-size_12-of-12" onnotify={handleOnNotify}>
+                    <c-child child-number="Child One"></c-child>
+                </div>
+             </lightning-layout-item>
+             <lightning-layout-item size="4">
+                {childTwoStatus}
+                <div class="slds-box slds-align_absolute-center  slds-size_12-of-12" onnotify={handleOnNotify}>
+                     <c-child child-number="Child Two"></c-child>
+                </div>
+             </lightning-layout-item>
+             <lightning-layout-item size="4">
+               {childThreeStatus}
+                <div class="slds-box slds-align_absolute-center  slds-size_12-of-12" onnotify={handleOnNotify}>
+                    <c-child child-number="Child Three"></c-child>
+                </div>
+            </lightning-layout-item>
+        </lightning-layout>
+    </lightning-card>
+</template>
