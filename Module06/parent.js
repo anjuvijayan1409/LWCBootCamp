@@ -8,15 +8,18 @@ export default class Parent extends LightningElement {
     
     handleOnNotify(event) {
 
-        const textVal = event.detail.childNum;
-        if(textVal == 'Child One')
-            this.childOneStatus = textVal +': '+ event.detail.statusMsg;
-        else if(textVal == 'Child Two')
-            this.childTwoStatus = textVal +': '+ event.detail.statusMsg;
-        else if(textVal == 'Child Three')
-            this.childThreeStatus = textVal +': '+ event.detail.statusMsg;
-
+        const textVal =  event.detail.statusMsg;
+        if(textVal.includes('Child One'))
+            this.childOneStatus = textVal;
+        else if(textVal.includes('Child Two'))
+            this.childTwoStatus =  textVal;
+        else if(textVal.includes('Child Three'))
+            this.childThreeStatus = textVal;
+            console.log('inner');
+        const cus =  new CustomEvent('notifyparent', { detail: {statusMsg:textVal}});
+        this.dispatchEvent(cus);
     }
+
     @api resetAllParent() {
 
         this.childOneStatus ='Child One: Deselected';

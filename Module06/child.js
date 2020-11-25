@@ -7,10 +7,10 @@ export default class Child extends LightningElement {
     handleChildClick(event) {
 
        this.selected = !this.selected;
-       const statusMessage = event.target.label+'ed';
-       const cus =  new CustomEvent('notify', { detail: {childNum:this.childNumber, statusMsg:statusMessage} ,bubbles: true , composed: true });
+       const statusMessage = this.childNumber +': '+event.target.label+'ed';
+       const cus =  new CustomEvent('notify', { detail: {statusMsg:statusMessage} });
        this.dispatchEvent(cus);
-       
+    
     }
    
 }
