@@ -8,7 +8,7 @@ export default class Child extends LightningElement {
 
        this.selected = !this.selected;
        const statusMessage = this.childNumber +': '+event.target.label+'ed';
-       const cus =  new CustomEvent('notify', { detail: {statusMsg:statusMessage} });
+       const cus =  new CustomEvent('notify', { detail: statusMessage});
        this.dispatchEvent(cus);
     
     }
