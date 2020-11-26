@@ -8,14 +8,14 @@ export default class Parent extends LightningElement {
     
     handleOnNotify(event) {
 
-        const textVal =  event.detail.statusMsg;
+        const textVal =  event.detail;
         if(textVal.includes('Child One'))
             this.childOneStatus = textVal;
         else if(textVal.includes('Child Two'))
             this.childTwoStatus =  textVal;
         else if(textVal.includes('Child Three'))
             this.childThreeStatus = textVal;
-        const cus =  new CustomEvent('notifyparent', { detail: {statusMsg:textVal}});
+        const cus =  new CustomEvent('notifyparent', { detail:textVal});
         this.dispatchEvent(cus);
     }
 
