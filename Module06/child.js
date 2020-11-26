@@ -3,7 +3,7 @@ import { api,LightningElement } from 'lwc';
 export default class Child extends LightningElement {
 
     @api childNumber;
-    @api selected =false;
+    selected =false;
     handleChildClick(event) {
 
        this.selected = !this.selected;
@@ -12,5 +12,9 @@ export default class Child extends LightningElement {
        this.dispatchEvent(cus);
     
     }
-   
+    @api
+    clearSelected() {
+
+        this.selected = false;
+    }
 }
