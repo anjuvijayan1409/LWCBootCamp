@@ -6,7 +6,7 @@ export default class GrandParent extends LightningElement {
 
    handleOnNotifyGrandParent(event) {
     
-       const textVal = event.detail.statusMsg;
+       const textVal = event.detail;
        this.selectedNum = textVal.includes('Selected') ? this.selectedNum +1 : this.selectedNum -1;      
     
    }
