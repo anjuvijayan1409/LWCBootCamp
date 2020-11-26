@@ -15,7 +15,6 @@ export default class Parent extends LightningElement {
             this.childTwoStatus =  textVal;
         else if(textVal.includes('Child Three'))
             this.childThreeStatus = textVal;
-            console.log('inner');
         const cus =  new CustomEvent('notifyparent', { detail: {statusMsg:textVal}});
         this.dispatchEvent(cus);
     }
@@ -27,7 +26,7 @@ export default class Parent extends LightningElement {
         this.childThreeStatus ='Child Three: Deselected';
        
         this.template.querySelectorAll("c-child").forEach((element)=>{
-           element.selected = false;
+            element.clearSelected();
         });
     }
   
