@@ -1,0 +1,112 @@
+<template>
+    <template  if:true={accountReqFields}>
+        <lightning-record-edit-form
+                    object-api-name="Account" onsuccess={handleResetAcc}>
+            <lightning-card title="Account Quick Create" icon-name="standard:account">
+                <lightning-button label={accountButtonLabel} slot="actions" onclick={handleAccountClick}></lightning-button>
+                <lightning-layout horizontal-align="center"  multiple-rows>
+                    <lightning-layout-item size="12" padding="around-small">
+                        <lightning-input-field field-name="Name" class="Acc"></lightning-input-field>
+                    </lightning-layout-item>
+                    <lightning-layout-item size="6" padding="around-small">
+                        <lightning-button class="slds-float_right" label="Cancel" onclick={handleResetAcc}></lightning-button>
+                    </lightning-layout-item>
+                    <lightning-layout-item size="6" padding="around-small">
+                        <lightning-button  variant="brand" class="slds-float_left" type="submit" label="Save"></lightning-button>
+                    </lightning-layout-item>
+                </lightning-layout>
+                   
+            </lightning-card>
+        </lightning-record-edit-form>
+    </template>
+    
+     <template  if:false={accountReqFields}>
+            <lightning-card title="Account Quick Create" icon-name="standard:account">
+                <lightning-button label={accountButtonLabel} slot="actions" onclick={handleAccountClick}></lightning-button>        
+            <lightning-record-form
+            object-api-name="Account"
+            layout-type="Full"
+            columns ="2">
+            </lightning-record-form>
+            </lightning-card>
+    </template>
+    <div class="slds-m-top_medium slds-size_12-of-12"></div>
+    <template  if:true={contactReqFields}>
+        <lightning-record-edit-form
+        object-api-name="Contact" onsuccess={handleResetCon}>
+        <lightning-card title="Contact Quick Create" icon-name="standard:contact">
+            <lightning-button label={contactButtonLabel} slot="actions" onclick={handleContactClick}></lightning-button>
+                <lightning-layout horizontal-align="center"  multiple-rows>
+                    <lightning-layout-item size="6" padding="around-small">
+                        <lightning-input-field field-name="Name" class="Con"></lightning-input-field>
+                    </lightning-layout-item>
+                    <lightning-layout-item size="6" padding="around-small">
+                        <lightning-input-field field-name="AccountId" class="Con"></lightning-input-field>
+                    </lightning-layout-item>
+                    <lightning-layout-item size="6" padding="around-small">
+                        <lightning-button class="slds-float_right" label="Cancel" onclick={handleResetCon}></lightning-button>
+                    </lightning-layout-item>
+                    <lightning-layout-item size="6" padding="around-small">
+                        <lightning-button  class="slds-float_left" variant="brand" type="submit" label="Save"></lightning-button>
+                    </lightning-layout-item>
+                 </lightning-layout>
+
+                </lightning-card>
+            </lightning-record-edit-form>  
+    </template>
+    <template  if:false={contactReqFields}>
+        <lightning-card title="Contact Quick Create" icon-name="standard:contact">
+            <lightning-button label={contactButtonLabel} slot="actions" onclick={handleContactClick}></lightning-button>
+            <lightning-record-form
+            object-api-name="Contact"
+            layout-type="Full"
+            columns ="2">
+            </lightning-record-form>
+        </lightning-card>
+    </template>
+    <div class="slds-m-top_medium slds-size_12-of-12"></div>
+    <template  if:true={opportunityReqFields}>
+        <lightning-record-edit-form
+        object-api-name="Opportunity" onsuccess={handleResetOpp}>
+        <lightning-card title="Opportunity Quick Create" icon-name="standard:opportunity">
+            <lightning-button label={opportunityButtonLabel} slot="actions" onclick={handleOpportunityClick}></lightning-button>
+            
+                <lightning-layout horizontal-align="center"  multiple-rows>
+                    <lightning-layout-item size="6" padding="around-small">
+                        <lightning-input-field field-name="Name" class="Opp"></lightning-input-field>
+                    </lightning-layout-item>
+                    <lightning-layout-item size="6" padding="around-small">
+                        <lightning-input-field field-name="CloseDate" class="Opp"></lightning-input-field>
+                    </lightning-layout-item>
+                    <lightning-layout-item size="6" padding="around-small">
+                        <lightning-input-field field-name="StageName" class="Opp"></lightning-input-field>
+                    </lightning-layout-item>
+                    <lightning-layout-item size="6" padding="around-small">
+                        <lightning-input-field field-name="AccountId" class="Opp"></lightning-input-field>
+                    </lightning-layout-item>
+                
+                <lightning-layout-item size="6" padding="around-small">
+                    <lightning-button class="slds-float_right" label="Cancel" onclick={handleResetOpp}></lightning-button>
+                </lightning-layout-item>
+                <lightning-layout-item size="6" padding="around-small">
+                    <lightning-button  variant="brand" class="slds-float_left" type="submit" label="Save"></lightning-button>
+                </lightning-layout-item>
+
+            </lightning-layout>
+
+            </lightning-card>
+        </lightning-record-edit-form>  
+    </template>
+    <template  if:false={opportunityReqFields}>
+        <lightning-card title="Opportunity Quick Create" icon-name="standard:opportunity">
+            <lightning-button label={opportunityButtonLabel} slot="actions" onclick={handleOpportunityClick}></lightning-button>
+            
+            <lightning-record-form
+            object-api-name="Opportunity"
+            layout-type="Full"
+             columns="2">
+            </lightning-record-form>
+        </lightning-card>
+    </template>
+    
+</template>
