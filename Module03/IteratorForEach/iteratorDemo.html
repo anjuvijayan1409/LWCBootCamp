@@ -18,7 +18,7 @@
                 </tr>
             </thead>
             <tbody>
-            <template if:true={contacts.length} for:each={contacts} for:item="con" for:index="index">
+            <template if:true={contacts} for:each={contacts} for:item="con" for:index="index">
                 <tr class="slds-hint-parent" key={con.Id}>
                     <th data-label="Index" scope="row">
                         <div class="slds-truncate">{index}</div>
